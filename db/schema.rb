@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408221222) do
+ActiveRecord::Schema.define(version: 20180409050828) do
 
   create_table "available_blocks", force: :cascade do |t|
     t.string "start"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20180408221222) do
     t.float "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "avatar"
   end
 
 end

@@ -3,7 +3,7 @@
   <ul class="list-group">
     <li class="list-group-item active">Tutores</li>
     <% @tutor.each do |tutor| %>
-        <h3><%= tutor.name %> - <%= tutor.available? %></h3>
+        <h5><%= tutor.name %> - <%= tutor.available? %> <%= link_to '<button type="button" class="btn btn-info">More Info</button>'.html_safe, tutor_path(tutor) %></h5>
         <hr style="width: 100%; color: black; height: 1px; background-color:black;"/>
     <% end %>
   </ul>

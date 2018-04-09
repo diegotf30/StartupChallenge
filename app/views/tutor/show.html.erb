@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="username" style="padding-top: 100px">
+    <div class="row">
+        <div class="col-2">
+            <img src="https://loremflickr.com/164/164/<%= @tutor.gender %>"/>
+        </div>
+        <div class="col-8" style="padding-top: 35px">
+            <h2>
+                <%= @tutor.name.titleize %>
+            </h2>
+            <h2>
+                <% @tutor.score.to_int.times do %>
+                    <span class="fa fa-star checked"></span>
+                <% end %>
+                <% (5 - @tutor.score).to_int.times do %>
+                    <span class="fa fa-star"></span>
+                <% end %>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <h2>
+            Cuota: $<%= @tutor.rate %> 
+        </h2>
+    </div>
+    <div class="row">
+        <h2>Materias:</h2>
+    </div>
+    <div class="row" style="padding-left: 30px">
+        <ul class="list-group">
+            <% @tutor.took.each do |course| %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <%= course.subject.name %>
+                    <span class="badge badge-primary badge-pill"><%= course.grade.to_int %></span>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+</div>

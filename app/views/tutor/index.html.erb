@@ -1,9 +1,20 @@
 <h1>Home</h1>
 <div class="container" style="margin-top: 3em;">
   <ul class="list-group">
-    <li class="list-group-item active">Tutores</li>
+    <li class="list-group-item active">Tutores Destacados</li>
     <% @tutor.each do |tutor| %>
-        <h5><%= tutor.name %> - <%= tutor.available? %> <%= link_to '<button type="button" class="btn btn-info">More Info</button>'.html_safe, tutor_path(tutor) %></h5>
+        <h5>
+           <%= tutor.name %>
+           (<font color="#36f"><%= tutor.major %></font>) - 
+           <% if tutor.available? == "Unavailable" %>
+               <font color="red">
+           <% else %>
+               <font color="lime">
+           <% end %>
+           <%= tutor.available?%></font>
+           <%= link_to '<button type="button" class="btn btn-info">More Info</button>'.html_safe, tutor_path(tutor) %>
+        </h5>
+         
         <hr style="width: 100%; color: black; height: 1px; background-color:black;"/>
     <% end %>
   </ul>

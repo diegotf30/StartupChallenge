@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'tutor#index', as: 'home'
 
   resources :tutor
+  resources :subject
 end

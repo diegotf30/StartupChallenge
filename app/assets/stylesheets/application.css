@@ -20,3 +20,8 @@
 div.row {
 	padding-top: 15px;
 }
+
+#Unavailable {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* msie */
+}

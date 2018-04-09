@@ -3,11 +3,17 @@
 <div class="username" style="padding-top: 100px">
     <div class="row">
         <div class="col-2">
-            <img src="https://loremflickr.com/164/164/<%= @tutor.gender %>"/>
+            <img id="<%= @tutor.available? %>" src="https://loremflickr.com/164/164/<%= @tutor.gender %>"/>
         </div>
         <div class="col-8" style="padding-top: 35px">
             <h2>
-                <%= @tutor.name.titleize %>
+                <%= @tutor.name.titleize %> -
+                <% if @tutor.available? %>
+                    <font color="red">
+                <% else %>
+                    <font color="lime">
+                <% end %>
+                <%= @tutor.available?%></font>
             </h2>
             <h2>
                 <% @tutor.score.to_int.times do %>
@@ -20,17 +26,19 @@
         </div>
     </div>
     <div class="row">
-        <h2>
-            Cuota: $<%= @tutor.rate %> 
-        </h2>
+        <div class="col-8">
+            <h2>Cuota: $<%= @tutor.rate %></h2>
+        </div>
     </div>
     <div class="row">
-        <h2>Materias:</h2>
+        <div class="col-8">
+            <h2>Materias:</h2>
+        </div>
     </div>
     <div class="row" style="padding-left: 30px">
         <ul class="list-group">
             <% @tutor.took.each do |course| %>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
+                <li class="list-group-item justify-content-between align-items-center">
                     <%= course.subject.name %>
                     <span class="badge badge-primary badge-pill"><%= course.grade.to_int %></span>
                 </li>

@@ -1,14 +1,10 @@
 class TutorController < ApplicationController
 	def index
-    @tutor = Tutor.all
+    @tutor = Tutor.order("RANDOM()").limit(5)
   end
 
   def show
     @tutor = Tutor.find(params[:id])
-  end
-
-  def new
-    @tutor = Tutor.new
   end
 
   def create
@@ -26,6 +22,7 @@ class TutorController < ApplicationController
       :name,
       :gender,
       :occupation,
+      :major,
       :age,
       :rate,
       :gpa,

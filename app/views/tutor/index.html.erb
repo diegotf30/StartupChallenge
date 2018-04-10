@@ -1,5 +1,12 @@
-<h1>Home</h1>
-<div class="container" style="margin-top: 3em;">
+<h3 align="center" style="padding-top: 3em;">
+  Busca asesores para materias de tu carrera
+</h3>
+
+<div class="mx-auto dynamic" align="center">
+  <%= render partial: 'dropdown' %>
+</div>
+
+<div class="container" style="margin-top: 1em;">
   <ul class="list-group">
     <li class="list-group-item active">Tutores Destacados</li>
     <% @tutor.each do |tutor| %>

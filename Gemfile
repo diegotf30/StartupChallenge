@@ -7,6 +7,8 @@ end
 
 
 gem 'railties'
+gem 'popper_js', '~> 1.12.9'
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'execjs'
 gem 'therubyracer'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

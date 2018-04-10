@@ -1,0 +1,13 @@
+<h3 align="center" style="padding-top: 3em;">
+  Selecciona la materia para la cual quieres asesorías
+</h3>
+
+<hr style="width: 100%; color: grey; height: 1px; background-color:grey;"/>
+
+<div class="mx-auto dynamic" align="center">
+    <% @subject.each do |subject| %>
+    <a class="dropdown-item" href="<%= took_index_path(:subject_id => subject.id) %>">
+      <%= subject.name %>
+    </a>
+    <% end %>
+</div>

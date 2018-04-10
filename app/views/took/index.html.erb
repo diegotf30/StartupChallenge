@@ -1,0 +1,23 @@
+<div class="container" style="margin-top: 5em;">
+  <ul class="list-group">
+    <li class="list-group-item active">
+      Tutores de <b><%= @took.first.subject.name %></b>
+    </li>
+    <% @took.each do |took| %>
+        <h5>
+           <span class="badge badge-primary badge-pill"><%= took.grade.to_int %></span>
+           <%= took.tutor.name %>
+           (<font color="#36f"><%= took.tutor.major %></font>) - 
+           <% if took.tutor.available? == "Unavailable" %>
+               <font color="red">
+           <% else %>
+               <font color="lime">
+           <% end %>
+           <%= took.tutor.available?%></font>
+           <%= link_to '<button type="button" class="btn btn-info">More Info</button>'.html_safe, tutor_path(took.tutor) %>
+        </h5>
+         
+        <hr style="width: 100%; color: black; height: 1px; background-color:black;"/>
+    <% end %>
+  </ul>
+</div>
